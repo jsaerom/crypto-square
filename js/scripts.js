@@ -7,9 +7,22 @@ function makeAlpha(input){
   lowerCase = input.toLowerCase();
   lowerCase = lowerCase.replace(/[^a-z]/g, "");
   lowerCase = lowerCase.split("");
-  alert(lowerCase);
 }
-function mainFunction(phrase){
+
+function findCR(input){
+  makeAlpha(input);
+  var column = Math.sqrt(lowerCase.length);
+  column = Math.floor(column);
+  var row = "";
+  if ((Math.sqrt(lowerCase.length)) - column < .5){
+    row = column + 1;
+  } else {
+    row = column + 2;
+  }
+}
+
+function mainFunction(input){
+
 }
 
 
@@ -17,6 +30,6 @@ function mainFunction(phrase){
 $("form").submit(function(event){
   event.preventDefault();
   var inputPhrase = $("#inputPhrase").val();
-  makeAlpha(inputPhrase);
+  findCR(inputPhrase);
   // $("#result").text(outputArray.join("").toString());
 });
